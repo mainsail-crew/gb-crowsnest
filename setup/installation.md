@@ -6,7 +6,7 @@ In order to install Crowsnest, it is required that `git` is already installed. O
 cd ~
 git clone https://github.com/mainsail-crew/crowsnest.git
 cd ~/crowsnest
-make install
+sudo make install
 ```
 
 After a successful installation, you should update your `moonraker.conf` as shown below to keep Crowsnest up to date. You will be asked during the installation if you want the script to do this for you.
@@ -16,4 +16,5 @@ After a successful installation, you should update your `moonraker.conf` as show
 type: git_repo
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
+install_script: tools/install.sh
 ```

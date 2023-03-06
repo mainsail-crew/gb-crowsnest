@@ -5,6 +5,8 @@
 The path where Crowsnest stores the log file.\
 Default: `log_path: ~/klipper_logs/crowsnest.log`
 
+&#x20;**** :warning:_**Do not change after installation! This will prevent logrotate properly handling the log file rotation!**_** ** :warning:
+
 ## **log\_level**
 
 Defines how much information should be written to the log file.\
@@ -88,3 +90,9 @@ This option is useful for debugging purposes and should be turned off when it is
 
 If this option is set to true, the existing log file will be deleted with every restart.\
 Default: `delete_log: true`
+
+## no\_proxy
+
+If this is set to `true`, it forces ustreamer to listen on all available network interfaces.
+
+Useful if you want to use crowsnest in 'standalone' mode. Not recommended if you used MainsailOS or KIAUH to setup.
