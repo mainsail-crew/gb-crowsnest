@@ -3,14 +3,18 @@
 ## **log\_path**
 
 The path where Crowsnest stores the log file.\
-Default: `log_path: ~/klipper_logs/crowsnest.log`
+Default: `log_path: ~/printer_data/logs/crowsnest.log`
+
+{% hint style="warning" %}
+This path will be set during Installation and should not be modified afterwards!
+{% endhint %}
 
 &#x20;**** :warning:_**Do not change after installation! This will prevent logrotate properly handling the log file rotation!**_** ** :warning:
 
 ## **log\_level**
 
 Defines how much information should be written to the log file.\
-Default: `log_level: quiet`
+Default: `log_level: verbose`
 
 Available options:
 
@@ -66,7 +70,7 @@ It contains your existing crowsnest.conf and displays detailed information about
 
 Turn it off when it is not needed.
 
-Check out this [example](https://github.com/lixxbox/crowsnest/blob/readme/log-example.md).
+Check out this [example](https://github.com/mainsail-crew/crowsnest/blob/master/log-example.md).
 
 </details>
 
@@ -86,10 +90,24 @@ This option is useful for debugging purposes and should be turned off when it is
 
 </details>
 
+{% hint style="info" %}
+After you set up your configuration to your needs, consider to set to `quiet`
+
+This will minimize logging volume and may speed up starting times.
+{% endhint %}
+
 ## **delete\_log**
 
-If this option is set to true, the existing log file will be deleted with every restart.\
-Default: `delete_log: true`
+Default: `delete_log: false`
+
+If this option is set to true, the existing log file will be deleted with every restart of crowsnest.\
+It could help to determine issues quicker, because the log will contain only informations about the current state since restart of crowsnest.
+
+{% hint style="info" %}
+This is useful if you ask for help in Discord Forums.
+
+Please be always prepared to upload your logfile.
+{% endhint %}
 
 ## no\_proxy
 

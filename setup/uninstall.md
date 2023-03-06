@@ -2,7 +2,7 @@
 
 To uninstall Crowsnest, run the following commands and follow the instructions.
 
-```shell
+```shell-session
 cd ~/crowsnest
 make uninstall
 ```

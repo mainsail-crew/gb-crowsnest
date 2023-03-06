@@ -4,7 +4,8 @@
 
 ## Setup
 
-* [Installation](setup/installation.md)
+* [Installation](setup/installation/README.md)
+  * [Multi Instance Install](setup/installation/multi-instance-install.md)
 * [Uninstall](setup/uninstall.md)
 * [Additional options](setup/additional-options.md)
 
@@ -13,6 +14,13 @@
 * [Sample config](configuration/sample-config.md)
 * [\[crowsnest\] section](configuration/crowsnest-section.md)
 * [\[cam\] section](configuration/cam-section.md)
+
+## FAQ / Trouble Shoot
+
+* [How to setup a Raspicam?](faq-trouble-shoot/how-to-setup-a-raspicam.md)
+* [How to setup a Arducam?](faq-trouble-shoot/how-to-setup-a-arducam.md)
+* [Error 127 in line 31](faq-trouble-shoot/error-127-in-line-31.md)
+* [Help!](faq-trouble-shoot/help.md)
 
 ## Extras
 

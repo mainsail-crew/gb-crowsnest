@@ -1,18 +1,9 @@
 # Sample config
 
-During the installation of Crowsnest a sample configuration named `crowsnest.conf` was already placed in Klipper's configuration folder. In Mainsail you can edit the file in the config section.
+During the installation of Crowsnest a sample configuration named `crowsnest.conf` was already placed in `printer_data/config` folder. In Mainsail you can edit the file in the config section.
 
-Sample config:
+A basic template will be created during the installation.
 
-```ini
-[crowsnest]
-log_path: ~/klipper_logs/crowsnest.log
-log_level: quiet
+This will start crowsnest, if a camera is attached, with plain defaults.
 
-[cam 1]
-mode: mjpg
-port: 8080
-device: /dev/video0
-resolution: 640x480
-max_fps: 15
-```
+The template can be viewed [here](https://github.com/mainsail-crew/crowsnest/blob/master/resources/crowsnest.conf).
