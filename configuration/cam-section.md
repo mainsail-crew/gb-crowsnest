@@ -4,11 +4,11 @@ You have to create a \[cam] section per camera and name your cameras by placing 
 
 ```
 [cam raspi]
-mode: mjpg
+mode: camera-streamer
 ...
 
 [cam logiC270]
-mode: mjpg
+mode: ustreamer
 ...
 ```
 
@@ -21,12 +21,12 @@ The word `cam` must be set!
 ## **mode**
 
 The streaming mode used by Crowsnest.\
-Default: `mode: mjpg`\
+Default: `mode: ustreamer`\
 Available options:
 
 <details>
 
-<summary>mjpg</summary>
+<summary>ustreamer</summary>
 
 This mode uses the mjpg protocol and streams with ustreamer. It's basically a series of jpeg images. This mode uses a lot of bandwidth depending on the resolution and frame rate set.
 
@@ -34,13 +34,34 @@ This mode uses the mjpg protocol and streams with ustreamer. It's basically a se
 
 <details>
 
-<summary>rtsp</summary>
+<summary>camera-streamer</summary>
 
-This mode uses the rtsp protocol, which uses h.264 as format. The advantage is the low bandwidth. The disadvantage is that it cannot be displayed in Mainsail. The stream can be watched in external programmes such as [VLC](https://www.videolan.org/).\
-**The stream's URL becomes `rtsp://<printer-ip-or-name>:8554/<your-camera-section-name>`**\
-Example: `rtsp://mainsailos.local:8554/raspi`
+This mode uses camera-streamer as backend.
+
+camera-streamer is only available on Raspberry Pi's currently, more SBC's will follow.\
+The greatest advantage of camera-streamer is, it uses the inbuilt GPU of the Pi SBC\
+to deliver hardware encoded h.264 as format. This allows you to stream your video feed in webrtc, which has the advantage of using less bandwith without loosing quality and/or framerates/resolution.\
+It also provides simultaniously stream of rtsp (if enabled through \`enable\_rtsp: true\`),\
+mjpg and snapshots.
 
 </details>
+
+## enable\_rtsp
+
+If \`mode: camera-streamer\` is used, this will enable the RTSP Server of camera-streamer.
+
+{% hint style="info" %}
+**The stream's URL becomes `rtsp://<printer-ip-or-name>:8554/<your-camera-section-name>`**\
+Example: `rtsp://mainsailos.local:8554/raspi`
+{% endhint %}
+
+## rtsp\_port
+
+```properties
+rtsp_port: 8554
+```
+
+This setting allows you to set a port for the rtsp server. Only available with \`mode: camera-streamer\`
 
 ## **port**
 
