@@ -9,7 +9,7 @@ Default: `log_path: ~/printer_data/logs/crowsnest.log`
 This path will be set during Installation and should not be modified afterwards!
 {% endhint %}
 
-&#x20;**** :warning:_**Do not change after installation! This will prevent logrotate properly handling the log file rotation!**_** ** :warning:
+&#x20;:warning:_**Do not change after installation! This will prevent logrotate properly handling the log file rotation!**_ :warning:
 
 ## **log\_level**
 

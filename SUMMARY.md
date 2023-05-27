@@ -18,7 +18,6 @@
 ## FAQ / Trouble Shoot
 
 * [How to setup a Raspicam?](faq-trouble-shoot/how-to-setup-a-raspicam.md)
-* [How to setup a Arducam?](faq-trouble-shoot/how-to-setup-a-arducam.md)
 * [Error 127 in line 31](faq-trouble-shoot/error-127-in-line-31.md)
 * [Help!](faq-trouble-shoot/help.md)
 

@@ -6,7 +6,7 @@ coverY: 0
 
 # Crowsnest
 
-> A crow's nest is a structure in the upper part of the main mast of a ship or a structure that is used as a lookout point. [_Wikipedia_](https://en.wikipedia.org/wiki/Crow's\_nest)__
+> A crow's nest is a structure in the upper part of the main mast of a ship or a structure that is used as a lookout point. [_Wikipedia_](https://en.wikipedia.org/wiki/Crow's\_nest)
 
 Crowsnest is a webcam daemon for Raspberry Pi OS distributions like MainsailOS. The service got its name from the crow's nest of a sailing ship. Its purpose is to easily keep an eye on the 3D printer from the distance.
 
