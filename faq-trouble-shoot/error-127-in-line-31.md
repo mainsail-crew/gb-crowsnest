@@ -8,11 +8,9 @@
 
 ### What should I do?&#x20;
 
-This error indicates that, in the build process of ustreamer something went wrong.
+This error indicates that, in the build process of ustreamer something went wrong. Sometimes an update of ustreamer dependencies might also lead to that error message. That is an easy fix, you have to do.&#x20;
 
-Sometimes an update of ustreamer dependencies might also lead to that error message.
-
-That is an easy fix, you have to do. Simply copy & pasta the following commands
+Simply copy & pasta the following commands:
 
 ```shell-session
 sudo systemctl stop crowsnest.service

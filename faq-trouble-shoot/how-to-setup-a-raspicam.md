@@ -1,25 +1,24 @@
 # How to setup a Raspicam?
 
-## What do I have to do?
+## Setup/Configure Raspicam
 
-First of all, this procedure is tested with Raspicam v1.3, v2.1 and v3.\
-But should work in the same manner with Arducams (not tested yet).
-
-For this example I used the v3 model.
+First of all, this procedure is tested with Raspicam v1.3, v2.1 and v3. But should work in the same manner with Arducams (not tested yet). For this example I used the v3 model.
 
 ### Step 1: Get your device path
 
-Open `crowsnest.log` and look for an entry like this
+Open `crowsnest.log` and look for an entry like this:
 
 ```
 [05/25/23 19:12:07] crowsnest: Detected 'libcamera' device -> /base/soc/i2c0mux/i2c@1/imx708@1a
 ```
 
+{% hint style="warning" %}
+See the [Troubleshooting](how-to-setup-a-raspicam.md#troubleshooting) section if such an entry does not exist.
+{% endhint %}
+
 ### Step 2: Set your device path
 
-Open your crowsnest.conf in Mainsail and look for the `device:` entry.
-
-Now set the device to the one, grabbed from your log.
+Open your `crowsnest.conf` in Mainsail and look for the `device:` entry. Now set the device to the one, grabbed from your log.
 
 ```yaml
 device: /base/soc/i2c0mux/i2c@1/imx708@1a
@@ -27,35 +26,17 @@ device: /base/soc/i2c0mux/i2c@1/imx708@1a
 
 ### Step 3: Change mode to camera-streamer
 
-Now you have to use `camera-streamer`  as your stream service with
+Now you have to use `camera-streamer`  as your stream service with:
 
 ```yaml
 mode: camera-streamer
 ```
 
-After you finished these steps, please click on `SAVE & RESTART`.
+After you finished these steps, please click on `SAVE & RESTART`. Now your camera stream should show up.
 
-Now your camera stream should show up.
+## Configuration example
 
-## But my Raspicam doesn't show up!
-
-Run `libcamera-hello --list-cameras` . This should show something similar to
-
-```
-Available cameras
------------------
-0 : imx708 [4608x2592] (/base/soc/i2c0mux/i2c@1/imx708@1a)
-    Modes: 'SRGGB10_CSI2P' : 1536x864 [120.13 fps - (768, 432)/3072x1728 crop]
-                             2304x1296 [56.03 fps - (0, 0)/4608x2592 crop]
-                             4608x2592 [14.35 fps - (0, 0)/4608x2592 crop]
-```
-
-If you get an output other than that, check the wiring and connectors.
-
-## Raspicam V1 configuration example
-
-Here is a good `crowsnest.conf`example for a Raspicam v1.\
-The whole explaination can be found in [this](https://github.com/mainsail-crew/crowsnest/issues/85#issuecomment-1561191087) post on github.
+Here is a good `crowsnest.conf`example for a Raspicam v1. The whole explaination can be found in [this](https://github.com/mainsail-crew/crowsnest/issues/85#issuecomment-1561191087) post on github.
 
 ```yaml
 [cam 1]
@@ -72,3 +53,50 @@ max_fps: 15                               # If Hardware Supports this it will be
 ```
 
 Thanks to [ytugarev](https://github.com/ytugarev) for spending time on this example
+
+## Troubleshooting
+
+### Raspicam not detected
+
+Login to your Pi (or Linux machine) and type:
+
+```
+libcamera-hello --list-cameras
+```
+
+If your output looks like this, your `/boot/config.txt` is probably misconfigured:
+
+```
+pi@mainsailos:~ $ libcamera-hello --list-cameras
+No cameras available!
+```
+
+Run this command via terminal to open your `/boot/config.txt` with `nano` as editor:
+
+```
+sudo nano /boot/config.txt
+```
+
+Look for all occurrences of `start_x=1` and `camera_auto_detect=0`. Remove these lines and press `CTRL-s` to save and `CTRL-x` to close the nano editor. Then `reboot` the machine.
+
+After the reboot, please reconnect your ssh client with your machine. Type `libcamera-hello --list-cameras` again. You should see something like this (a Raspicam V2 was used in this example):
+
+```
+pi@mainsailos:~ $ libcamera-hello --list-cameras
+Available cameras
+-----------------
+0 : imx219 [3280x2464] (/base/soc/i2c0mux/i2c@1/imx219@10)
+    Modes: 'SRGGB10_CSI2P' : 640x480 [103.33 fps - (1000, 752)/1280x960 crop]
+                             1640x1232 [41.85 fps - (0, 0)/3280x2464 crop]
+                             1920x1080 [47.57 fps - (680, 692)/1920x1080 crop]
+                             3280x2464 [21.19 fps - (0, 0)/3280x2464 crop]
+           'SRGGB8' : 640x480 [103.33 fps - (1000, 752)/1280x960 crop]
+                      1640x1232 [41.85 fps - (0, 0)/3280x2464 crop]
+                      1920x1080 [47.57 fps - (680, 692)/1920x1080 crop]
+                      3280x2464 [21.19 fps - (0, 0)/3280x2464 crop]
+```
+
+If you get `No cameras available!` a second time, please check connections and the ribbon cable. Also avoid running the ribbon near stepper motors, stepper drivers and/or power supplies. They can interfere with the signal.
+
+
+
