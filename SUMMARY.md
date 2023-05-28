@@ -15,13 +15,13 @@
 * [\[crowsnest\] section](configuration/crowsnest-section.md)
 * [\[cam\] section](configuration/cam-section.md)
 
-## FAQ / Trouble Shoot
+## FAQ / Trouble Shoot <a href="#faq" id="faq"></a>
 
-* [Backends from Crowsnest](faq-trouble-shoot/backends-from-crowsnest.md)
-* [How to use identical USB Cam models twice?](faq-trouble-shoot/how-to-use-identical-usb-cam-models-twice.md)
-* [How to setup a Raspicam?](faq-trouble-shoot/how-to-setup-a-raspicam.md)
-* [Error 127 in line 31](faq-trouble-shoot/error-127-in-line-31.md)
-* [Help!](faq-trouble-shoot/help.md)
+* [Backends from Crowsnest](faq/backends-from-crowsnest.md)
+* [How to use identical USB Cam models twice?](faq/how-to-use-identical-usb-cam-models-twice.md)
+* [How to setup a Raspicam?](faq/how-to-setup-a-raspicam.md)
+* [Error 127 in line 31](faq/error-127-in-line-31.md)
+* [Help!](faq/help.md)
 
 ## Extras
 
