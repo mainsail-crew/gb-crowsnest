@@ -16,7 +16,7 @@ This Backend is active, when you use `mode: ustreamer` (legacy `mode: mjpg`) in 
 
 ### camera-streamer - ayufan
 
-[camera-streamer](https://github.com/ayufan/camera-streamer) is primarily focused on supporting a fully hardware-accelerated streaming of MJPEG streams and H265 video streams for minimal latency and maintained by [Kamil Trzciński](https://github.com/ayufan).
+[camera-streamer](https://github.com/ayufan/camera-streamer) is primarily focused on supporting a fully hardware-accelerated streaming of MJPEG streams and H264 video streams for minimal latency and maintained by [Kamil Trzciński](https://github.com/ayufan).
 
 * [Link to the GitHub Project](https://github.com/ayufan/camera-streamer)
 
