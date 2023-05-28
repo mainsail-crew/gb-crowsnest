@@ -18,6 +18,7 @@
 ## FAQ / Trouble Shoot <a href="#faq" id="faq"></a>
 
 * [Backends from Crowsnest](faq/backends-from-crowsnest.md)
+* [Upgrade from v3 to v4](faq/upgrade-from-v3-to-v4.md)
 * [How to use identical USB Cam models twice?](faq-trouble-shoot/how-to-use-identical-usb-cam-models-twice.md)
 * [How to setup a Raspicam?](faq-trouble-shoot/how-to-setup-a-raspicam.md)
 * [Error 127 in line 31](faq-trouble-shoot/error-127-in-line-31.md)
