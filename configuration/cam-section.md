@@ -77,7 +77,9 @@ Default: `port: 8080`
 | 8082 | /webcam3/?action=stream | /webcam3/?action=snapshot |
 | 8083 | /webcam4/?action=stream | /webcam4/?action=snapshot |
 
+#### A small note on webrtc
 
+In order to use `webrtc`, please replace `?action=stream` with `webrtc`. Keep in mind this will only work if you use `mode: camera-streamer`.
 
 ## **device**
 
@@ -443,8 +445,6 @@ Default `max_fps: 15`
 * The FPS has a big impact on the bandwidth, especially in mjpg mode.
 * This setting is mostly ignored in rtsp mode.
 
-
-
 ## **custom\_flags**
 
 This setting allows you to pass advanced parameters to ustreamer. It is possible to adjust image parameters such as brightness, contrast and saturation, or to flip the image. The passed parameters are appended to the already configured parameters. However, your camera needs to support these advanced parameters as well.\
@@ -505,8 +505,6 @@ There are also two ways to determine what your device is capable of
 </details>
 
 * or as earlier mentioned using `dev-helper.sh` script
-
-
 
 ## **Example of an application**
 
