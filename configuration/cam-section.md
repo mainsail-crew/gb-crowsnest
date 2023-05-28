@@ -77,9 +77,15 @@ Default: `port: 8080`
 | 8082 | /webcam3/?action=stream | /webcam3/?action=snapshot |
 | 8083 | /webcam4/?action=stream | /webcam4/?action=snapshot |
 
-#### A small note on webrtc
+#### A small note on WebRTC
 
-In order to use `webrtc`, please replace `?action=stream` with `webrtc`. Keep in mind this will only work if you use `mode: camera-streamer`.
+In order to use `WebRTC`, please replace `?action=stream` with `webrtc`. Keep in mind this will only work if you use `mode: camera-streamer`.
+
+{% hint style="warning" %}
+Don't change the `URL Snapshot`! This will be the same as before.
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Webcam settings for WebRTC (camera-streamer)</p></figcaption></figure>
 
 ## **device**
 
