@@ -77,7 +77,18 @@ Run this command via terminal to open your `/boot/config.txt` with `nano` as edi
 sudo nano /boot/config.txt
 ```
 
-Look for all occurrences of `start_x=1` and `camera_auto_detect=0`. Remove these lines and press `CTRL-s` to save and `CTRL-x` to close the nano editor. Then `reboot` the machine.
+Look for the following entries and change it:
+
+* `start_x=1` this value is deprecated. If you have it in your `/boot/config.txt`, delete this line.
+* `camera_auto_detect=0` this value is deprecated. If you have it in your `/boot/config.txt`, delete this line.
+* Double-check if you have `camera_auto_detect=1` in your `/boot/config.txt`. If you don't have it in your config, please add it at the bottom of this file.
+* Check if you have `dtoverlay=vc4-kms-v3d` or `dtoverlay=vc4-fkms-v3d` in your `/boot/config.txt`. If you don't have one of these options in your `/boot/config.txt` without a `#` in front of the line, please add `dtoverlay=vc4-kms-v3d` to your `/boot/config.txt`.
+
+{% hint style="warning" %}
+`start_x=1` and `dtoverlay=vc4-(f)kms-v3d` are also important für DSI displays. Please double-check the compatibility with your display.
+{% endhint %}
+
+Press `CTRL-s` to save and `CTRL-x` to close the nano editor. Then `reboot` the machine.
 
 After the reboot, please reconnect your ssh client with your machine. Type `libcamera-hello --list-cameras` again. You should see something like this (a Raspicam V2 was used in this example):
 
