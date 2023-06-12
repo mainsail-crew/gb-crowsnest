@@ -51,8 +51,8 @@ mjpg and snapshots.
 If \`mode: camera-streamer\` is used, this will enable the RTSP Server of camera-streamer.
 
 {% hint style="info" %}
-**The stream's URL becomes `rtsp://<printer-ip-or-name>:8554/<your-camera-section-name>`**\
-Example: `rtsp://mainsailos.local:8554/raspi`
+**The stream's URL becomes `rtsp://<printer-ip-or-name>:<rtsp_port>`**/stream.h264\
+Example: `rtsp://mainsailos.local:8554`/stream.h264
 {% endhint %}
 
 ## rtsp\_port
