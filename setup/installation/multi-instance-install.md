@@ -23,7 +23,7 @@ This launches a Wizard that let you set up your paths according to your Multi In
 
 Choose a path as a _Master_ path. This path will be the Instance where files are located, needed by Crowsnest, such as `crowsnest.conf`, `crowsnest.env` and `crowsnest.log` .
 
-After successful generation of a configuration file (`toos/.config`) for the Installer please run
+After successful generation of a configuration file (`tools/.config`) for the Installer please run
 
 ```shell-session
 sudo make install
