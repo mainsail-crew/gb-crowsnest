@@ -100,7 +100,7 @@ Pay attention, that the mode names are changed and `mjpg` is now `ustreamer.`
 This mode is only available on Raspberry Pi SBCs! If you use an other Host, skip this step!
 {% endhint %}
 
-Open your `crowsnest.conf` in Mainsail and change the mode of your webcam to `camera-streamer`. Hier is an example cam setting after the switch to `camera-streamer`:
+Open your `crowsnest.conf` in Mainsail and change the mode of your webcam to `camera-streamer`. Here is an example cam setting after the switch to `camera-streamer`:
 
 ```yaml
 [cam 1]
