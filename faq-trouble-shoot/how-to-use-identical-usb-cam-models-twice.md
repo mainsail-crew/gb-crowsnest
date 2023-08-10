@@ -12,7 +12,7 @@ usb-YGTek_Webcam_YG_U700_D.2021.0104.1403-video-index1
 
 As you can see there is only on device showing up. This is the only one that you can find in `crowsnest.log`.
 
-Now please type `ls /dev/v4l/by-id`.
+Now please type `ls /dev/v4l/by-path`.
 
 ```
 pi@mainsailos:~ $ ls /dev/v4l/by-path
