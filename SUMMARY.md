@@ -19,7 +19,7 @@
 
 * [Backends from Crowsnest](faq/backends-from-crowsnest.md)
 * [Upgrade from v3 to v4](faq/upgrade-from-v3-to-v4.md)
-* [Use legacy on Buster](faq/use-legacy-on-buster.md)
+* [Use legacy branch on Buster](faq/use-legacy-branch-on-buster.md)
 * [How to use identical USB Cam models twice?](faq-trouble-shoot/how-to-use-identical-usb-cam-models-twice.md)
 * [How to setup a Raspicam?](faq-trouble-shoot/how-to-setup-a-raspicam.md)
 * [Error 127 in line 31](faq-trouble-shoot/error-127-in-line-31.md)

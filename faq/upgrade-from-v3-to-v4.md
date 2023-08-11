@@ -8,7 +8,7 @@ description: >-
 # Upgrade from v3 to v4
 
 {% hint style="warning" %}
-This Guide only works on Debian Bullseye based systems (MainsailOS >= v1.0.0). If you use an older OS which is based on Debian Buster, please follow [this guide](use-legacy-on-buster.md)!
+This Guide only works on Debian Bullseye based systems (MainsailOS >= v1.0.0). If you use an older OS which is based on Debian Buster, please follow [this guide](use-legacy-branch-on-buster.md)!
 {% endhint %}
 
 ### Step 1: Uninstall Crowsnest v3

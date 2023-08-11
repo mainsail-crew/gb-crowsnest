@@ -109,5 +109,62 @@ Available cameras
 
 If you get `No cameras available!` a second time, please check connections and the ribbon cable. Also avoid running the ribbon near stepper motors, stepper drivers and/or power supplies. They can interfere with the signal.
 
+### OV5647 and/or klipperscreen
 
+For some users there are problems with the `OV5647` sensor module or a Raspberry Pi camera module in combination with `klipperscreen`. These issues appear to be a problem inside the kernel of the Raspberry Pi itself with the new camera stack `libcamera`. The easiest option to fix this for now is to use the legacy camera stack of the Raspberry Pi (not to be confused with the legacy branch of crowsnest!!!).
 
+{% hint style="danger" %}
+This will not work for Raspicam v3. Same goes for most Arducams (not tested yet).
+{% endhint %}
+
+{% hint style="info" %}
+We don't provide support for klipperscreen. If you still have problems with your klipperscreen after these changes, please reach out to the klipperscreen support.
+{% endhint %}
+
+#### Step 1: Change your `/boot/config.txt`
+
+Run this command via terminal to open your `/boot/config.txt` with `nano` as editor:
+
+```
+sudo nano /boot/config.txt
+```
+
+Look for the following entries and change it:
+
+* `start_x=1` this value is needed for the legacy camera stack to work. If you don't have it in your `/boot/config.txt`, please add it at the bottom of this file.
+* `camera_auto_detect=0` is needed for the legacy camera stack to work. If you don't have it in your `/boot/config.txt`, please add it at the bottom of this file.
+* Double-check if you have `camera_auto_detect=1` in your `/boot/config.txt`. If you have it in your config, delete this line.
+
+Press `CTRL-s` to save and `CTRL-x` to close the nano editor. Then `reboot` the machine.
+
+After the reboot, please reconnect your ssh client with your machine. Type `vcgencmd get_camera`. You should see:
+
+```
+pi@mainsailos:~ $ vcgencmd get_camera
+supported=1 detected=1, libcamera interfaces=0
+```
+
+{% hint style="info" %}
+<pre><code><strong>libcamera-hello --list-cameras will now output "No cameras available!"
+</strong></code></pre>
+{% endhint %}
+
+If you get anything else, please check your `/boot/config.txt` again and the ribbon cable.
+
+#### Step 2: Set your device path
+
+Open your `crowsnest.conf` in Mainsail and look for the `device:` entry. Now set the device to `/dev/video0`.
+
+```
+device: /dev/video0
+```
+
+#### Step 3: Try out ustreamer and camera-streamer
+
+With this setup you should be able to use either `ustreamer`or `camera-streamer`. Sometimes it occurs that `camera-streamer` doesn't run stable enough with this setup. If you have problems with `camera-streamer` then change your mode to `ustreamer`:
+
+```yaml
+mode: ustreamer
+```
+
+After changing the mode, please click on `SAVE & RESTART`.
