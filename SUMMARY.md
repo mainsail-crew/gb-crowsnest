@@ -22,6 +22,7 @@
 * [Use legacy branch on Buster](faq/use-legacy-branch-on-buster.md)
 * [How to use identical USB Cam models twice?](faq-trouble-shoot/how-to-use-identical-usb-cam-models-twice.md)
 * [How to setup a Raspicam?](faq-trouble-shoot/how-to-setup-a-raspicam.md)
+* [How to use WYZE-Cams?](faq/how-to-use-wyze-cams.md)
 * [Error 127 in line 31](faq-trouble-shoot/error-127-in-line-31.md)
 * [Help!](faq-trouble-shoot/help.md)
 

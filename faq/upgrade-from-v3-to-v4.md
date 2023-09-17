@@ -127,7 +127,7 @@ After the restart of Crowsnest, you have to change the Settings in Mainsail to W
 Don't change the `URL Snapshot`! This will be the same as before.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Webcam settings for WebRTC (camera-streamer)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Webcam settings for WebRTC (camera-streamer)</p></figcaption></figure>
 
 ### Step 7: Remove outdated settings in /boot/config.txt (optional)
 
