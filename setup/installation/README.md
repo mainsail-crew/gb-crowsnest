@@ -1,6 +1,7 @@
 # Installation
 
 In order to install Crowsnest, it is required that `git` is already installed. Once this is done, please execute the commands below and follow the instructions carefully.
+If you are installing Crowsnest on a device with a low amount of ram (<1GB), consider increasing swap space to hit a minimum of 1GB of memory before running the commands.
 
 ```bash
 cd ~
