@@ -85,7 +85,7 @@ Look for the following entries and change it:
 * Check if you have `dtoverlay=vc4-kms-v3d` or `dtoverlay=vc4-fkms-v3d` in your `/boot/config.txt`. If you don't have one of these options in your `/boot/config.txt` without a `#` in front of the line, please add `dtoverlay=vc4-kms-v3d` to your `/boot/config.txt`.
 
 {% hint style="warning" %}
-`start_x=1` and `dtoverlay=vc4-(f)kms-v3d` are also important für DSI displays. Please double-check the compatibility with your display.
+`start_x=1` and `dtoverlay=vc4-(f)kms-v3d` are also important for DSI displays. Please double-check the compatibility with your display.
 {% endhint %}
 
 Press `CTRL-s` to save and `CTRL-x` to close the nano editor. Then `reboot` the machine.
