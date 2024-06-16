@@ -16,5 +16,5 @@ After a successful installation, you should update your `moonraker.conf` as show
 type: git_repo
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
-install_script: tools/pkglist.sh
+install_script: tools/install.sh
 ```
